@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank System - Accounts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .account {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .account span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bank System - Accounts</h1>
+
+<!-- Container to display all accounts -->
+<div th:each="account : ${accounts}" class="account">
+    <div><span>Account ID:</span> <span th:text="${account.accountId}"></span></div>
+    <div><span>Name:</span> <span th:text="${account.nameOfUser}"></span></div>
+    <div><span>Balance:</span> $<span th:text="${account.accountBalance}"></span></div>
+</div>
+
+</body>
+</html>
